@@ -7,10 +7,11 @@ import { router as apiRoutes } from "./routes/index.js";
 import { connectDB } from "./config/mongodb.js";
 import { connectSupabase } from "./config/supabase.js";
 import { limiter } from "./middlewares/rateLimiter.js";
+import helmet from 'helmet'
 
 const app = express();
 
-app.user(helment());
+app.use(helmet());
 
 const corsOptions = {
   origin: [
